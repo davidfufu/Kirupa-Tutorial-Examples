@@ -13,29 +13,24 @@ import { BrowserRouter, Switch, Route, Link} from 'react-router-dom'
 // This demo uses a HashRouter instead of BrowserRouter
 // because there is no server to match URLs
 
-const Superhero = function() {
-	return(
-		<h1>Batman</h1>
-	)
+class HelloWorld extends React.Component{
+	render(){
+		return(
+			<p>Hello, {this.props.greetTarget}!</p>
+		);
+	}
 }
 
-class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			example: "exValue"
-		}
-	}
-	render() {
-		return(<Superhero/>);
-	}
-
-}
 
 ReactDOM.render((
-	<BrowserRouter>
-		<App/>
-	</BrowserRouter>
+	  <div>
+    <HelloWorld greetTarget="Batman"/>
+    <HelloWorld greetTarget="Iron Man"/>
+    <HelloWorld greetTarget="Nicolas Cage"/>
+    <HelloWorld greetTarget="Mega Man"/>
+    <HelloWorld greetTarget="Bono"/>
+    <HelloWorld greetTarget="Catwoman"/>
+  </div>
 	), document.getElementById('container')
 )
 
